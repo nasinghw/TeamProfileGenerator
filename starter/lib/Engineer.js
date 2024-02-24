@@ -1,6 +1,6 @@
-// Code to define and export the Engineer class.
+// Code to define Engineer class.
 
-//This class should inherit from Employee.
+//This class inherit from Employee.
 
 const Employee = require("./Employee");
 
