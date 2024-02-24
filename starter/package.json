@@ -11,5 +11,8 @@
   },
   "author": "NS",
   "license": "ISC",
-  "keywords": []
+  "keywords": [],
+  "dependencies": {
+    "inquirer": "^6.5.0"
+  }
 }
