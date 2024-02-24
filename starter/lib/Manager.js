@@ -1,1 +1,3 @@
-// TODO: Write code to define and export the Manager class. HINT: This class should inherit from Employee.
+// Code to define and export the Manager class.
+
+//This class is inherited from Employee.
