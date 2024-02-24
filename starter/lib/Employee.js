@@ -1,4 +1,4 @@
-// Code to define Employee class
+// Code to define and export Employee class
 
 class Employee {
     constructor(name, id, email) {

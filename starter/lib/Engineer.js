@@ -1,4 +1,4 @@
-// Code to define Engineer class.
+// Code to define and export Engineer class.
 
 //This class inherit from Employee.
 
