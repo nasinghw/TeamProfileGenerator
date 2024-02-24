@@ -15,8 +15,17 @@ class Employee {
         return this.id;
     }
 
+
+    getEmail() {
+        return this.email;
+    } 
+
+    getRole() {
+        return this.title;
+    }   
+    
 }
 
 module.exports = Employee;
 
-}
+
