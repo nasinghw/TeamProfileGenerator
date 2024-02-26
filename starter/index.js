@@ -95,7 +95,8 @@ questions() {
                     name: 'email',
                     message: "Please provide intern's email",
                     
-                   },
+                },
+                
 
                 },
     })
