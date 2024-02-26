@@ -28,15 +28,16 @@ class Prompt{
         return this.teamArray;
     }
 
-//User Questions
-questions() {
-    inquirer.prompt(
-    {
-     type: 'list',
-     name: 'employeeTitle',
-     message: "Choose team employee you would like to add ?",
-     options: ['Manager', 'Engineer', 'Intern', 'I finished adding my team']
-    })
+    //User Questions
+    questions() {
+        inquirer.prompt(
+        {
+        type: 'list',
+        name: 'employeeTitle',
+        message: "Choose team employee you would like to add ?",
+        choices: ['Manager', 'Engineer', 'Intern', 'I finished adding my team']
+        })
+        
     .then(({employeeTitle}) => {
         if(employeeTitle === 'Manager'){
         inquirer.prompt([
@@ -144,7 +145,7 @@ questions() {
                 this.questions();
             });
 
-        } else if (employeeTitle === 'I finished entering my team info') {
+        } else if (employeeTitle === 'I finished adding my team') {
             //Write the html file in the dist folder
             const pagehtml = generateHTML(this.getTeamArray());
             fs.writeFile('./dist/index.html', pagehtml, err => {
@@ -155,13 +156,13 @@ questions() {
         }
     });
 
-}
-};
+    }
+ };
 
 // Activates prompts in CLI
 const prompt = new Prompt();
 console.log(prompt.getTeamArray());
-// prompt.questions();
+prompt.questions();
 
 
 
