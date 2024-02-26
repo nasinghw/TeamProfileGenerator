@@ -123,3 +123,8 @@ questions() {
     }
 };
 
+// Prompts in CLI
+const prompt = new Prompt();
+prompt.questions();
+
+module.exports = Prompt;
