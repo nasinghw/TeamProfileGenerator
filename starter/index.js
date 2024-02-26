@@ -96,7 +96,12 @@ questions() {
                     message: "Please provide intern's email",
                     
                 },
-                
+                {
+                    type: 'input',
+                    name: 'school',
+                    message: "Please enter the intern's school name",
+                    
+                }
 
                 },
     })
