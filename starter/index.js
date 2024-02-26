@@ -20,5 +20,16 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./src/page-template.js");
 
 
-// TODO: Write Code to gather information about the development team members, and render the HTML file.
+// Code to gather information about the development team members, and render the HTML file.
+
+//USer questions
+
+questions() {
+    inquirer.prompt({
+        type: 'list',
+        name: 'employeeTitle',
+        question: "Select employee title from list to add",
+        selection: ['Manager',  'Engineer', 'Intern', 'I have selected my team'] 
+    })
+}
 
