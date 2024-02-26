@@ -1,20 +1,22 @@
 // Packages required 
-const Manager = require("./lib/Manager");
-const Engineer = require("./lib/Engineer");
-const Intern = require("./lib/Intern");
+const Manager = require("./lib/Manager.js");
+const Engineer = require("./lib/Engineer.js");
+const Intern = require("./lib/Intern.js");
 // Inquirer.js provides the user interface and the inquiry session flow.
 const inquirer = require("inquirer");
 const path = require("path");
 // Read files
 const fs = require("fs");
 
-const OUTPUT_DIR = path.resolve(__dirname, "output");
-const outputPath = path.join(OUTPUT_DIR, "team.html");
+//Generate HTML
+const generateHTML = require('./src/page-template.js');
 
-const render = require("./src/page-template.js");
+// const OUTPUT_DIR = path.resolve(__dirname, "output");
+// const outputPath = path.join(OUTPUT_DIR, "team.html");
+
+// const render = require("./src/page-template.js");
 
 // Code to gather information about the development team members, and render the HTML file.
-
 
 // Class containing all questions
 class Prompt{
@@ -26,7 +28,7 @@ class Prompt{
         return this.teamArray;
     }
 
-// User Questions
+//User Questions
 questions() {
     inquirer.prompt(
     {
@@ -143,7 +145,7 @@ questions() {
             });
 
         } else if (employeeTitle === 'I finished entering my team info') {
-            //function that writes the html file in the dist folder
+            //Write the html file in the dist folder
             const pagehtml = generateHTML(this.getTeamArray());
             fs.writeFile('./dist/index.html', pagehtml, err => {
                 if (err) throw new Error(err);
@@ -158,6 +160,9 @@ questions() {
 
 // Activates prompts in CLI
 const prompt = new Prompt();
-prompt.questions();
+console.log(prompt.getTeamArray());
+// prompt.questions();
+
+
 
 module.exports = Prompt;
