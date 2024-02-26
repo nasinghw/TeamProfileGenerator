@@ -1,6 +1,6 @@
 // Code to define and export Intern class.
 
-//class is inherited from Employee.
+//This class is inherited from Employee.
 
 const Employee = require('./Employee');
 
