@@ -103,6 +103,14 @@ questions() {
                     message: "Please enter the intern's school name",
                     
                 }
+
+                // Store Manager data into teamArray
+                .then( (templateData) => {
+                    const newManager = new Manager(templateData.name, templateData.id, templateData.email, templateData.officeNumber)
+                    this.teamArray.push(newManager);
+                    // Sends user back to menu
+                    this.questions();
+                });
                 // Pushes Intern data into teamArray
             ]).then( templateData => {
                 const newIntern = new Intern(templateData.name, templateData.id, templateData.email, templateData.school);
