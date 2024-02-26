@@ -89,8 +89,13 @@ questions() {
                     name: 'id',
                     message: "Please provide intern's employee id",
                    
+                },
+                {
+                    type: 'input',
+                    name: 'email',
+                    message: "Please provide intern's email",
+                    
                    },
-
 
                 },
     })
