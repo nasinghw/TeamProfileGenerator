@@ -81,15 +81,8 @@ questions() {
                 {
                  type: 'input',
                  name: 'name',
-                 message: "Please enter the intern's name",
-                 validate: nameInput => {
-                    if (nameInput) {
-                        return true;
-                    } else {
-                        console.log("Please enter the intern's name!");
-                        return false;
-                    }
-                }
+                 message: "Please provide intern's name",
+                
                 },
 
 
