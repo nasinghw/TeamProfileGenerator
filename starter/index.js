@@ -47,41 +47,25 @@ questions() {
                     type: 'input',
                     name: 'name',
                     message: "Please provide manager's name",
-                    validate: function (nameInput) {
-                        if (nameInput) {
-                            return true;
-                        } else {
-                            console.log("Please provide manager's name!");
-                            return false;
-                        }
-                    }
+                    
                 },
                 {
                     type: 'number',
                     name: 'id',
                     message: "Please provide manager's employee id",
-                    validate: function (idInput) {
-                        if (idInput) {
-                            return true;
-                        } else {
-                            console.log("Please provide correct id, id should be a number!");
-                            return false;
-                        }
-                    }
+                   
                 },
 
                 {
                     type: 'input',
                     name: 'email',
                     message: "Please provide manager's email",
-                    validate: function (emailInput) {
-                        if (emailInput) {
-                            return true;
-                        } else {
-                            console.log("Please provide correct email!");
-                            return false;
-                        }
-                    }
+                    
+                },
+                
+
+
+
                 },
     })
 }}
