@@ -37,7 +37,7 @@ questions() {
     inquirer.prompt({
         type: 'list',
         name: 'employeeTitle',
-        question: "Select employee title from list to add",
+        message: "Select employee title from list to add",
         selection: ['Manager',  'Engineer', 'Intern', 'I have selected my team'] 
 
     }).then(({employeeTitle}) => {
@@ -72,9 +72,25 @@ questions() {
             ]).then( templateData => {
                 const newEngineer = new Engineer(templateData.name, templateData.id, templateData.email, templateData.github);
                 this.teamArray.push(newEngineer);
-                // Sends user back to menu
+                // Return user back to menu
                 this.questions();
             });
+
+        } else if (employeeTitle === 'Intern') {
+            inquirer.prompt([
+                {
+                 type: 'input',
+                 name: 'name',
+                 message: "Please enter the intern's name",
+                 validate: nameInput => {
+                    if (nameInput) {
+                        return true;
+                    } else {
+                        console.log("Please enter the intern's name!");
+                        return false;
+                    }
+                }
+                },
 
 
 
