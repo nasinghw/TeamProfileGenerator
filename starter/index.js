@@ -84,7 +84,12 @@ questions() {
                  message: "Please provide intern's name",
                 
                 },
-
+                {
+                    type: 'number',
+                    name: 'id',
+                    message: "Please provide intern's employee id",
+                   
+                   },
 
 
                 },
