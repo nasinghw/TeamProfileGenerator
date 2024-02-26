@@ -1,20 +1,26 @@
-// Packages
-const fs = require('fs');
-const inquirer = require('inquirer');
-const generateHTML = require('./src/generateHtmlPage');
-const Manager = require('./lib/Manager');
-const Intern = require('./lib/Intern');
-const Engineer = require('./lib/Engineer');
+// Packages required 
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+// Inquirer.js provides the user interface and the inquiry session flow.
+const inquirer = require("inquirer");
+const path = require("path");
+// Read files
+const fs = require("fs");
+
+const OUTPUT_DIR = path.resolve(__dirname, "output");
+const outputPath = path.join(OUTPUT_DIR, "team.html");
+
+const render = require("./src/page-template.js");
+
+// Code to gather information about the development team members, and render the HTML file.
+
 
 // Class containing all questions
 class Prompt{
     constructor() {
         this.teamArray = [];
     }
-
-    /**
-     * @returns the array of all Employee objects
-     */
 
     getTeamArray() {
         return this.teamArray;
