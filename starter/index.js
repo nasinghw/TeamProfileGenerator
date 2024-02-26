@@ -102,6 +102,13 @@ questions() {
                     message: "Please enter the intern's school name",
                     
                 }
+                // Pushes Intern data into teamArray
+            ]).then( templateData => {
+                const newIntern = new Intern(templateData.name, templateData.id, templateData.email, templateData.school);
+                this.teamArray.push(newIntern);
+                // Sends user back to menu
+                this.questions();
+            });
 
                 },
     })
