@@ -110,7 +110,16 @@ questions() {
                 this.questions();
             });
 
-                },
-    })
-}}
+            } else if (employeeType === 'I finished entering my team info') {
+            //function that writes the html file in the dist folder
+                const pagehtml = generateHTML(this.getTeamArray());
+                fs.writeFile('./dist/index.html', pagehtml, err => {
+                if (err) throw new Error(err);
+
+                console.log('Page created! Check out index.html in the dist/ folder to see it!');
+            });
+            }
+        });
+    }
+};
 
