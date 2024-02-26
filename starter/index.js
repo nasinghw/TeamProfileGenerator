@@ -62,7 +62,19 @@ questions() {
                     message: "Please provide manager's email",
                     
                 },
-                
+                {
+                    type: 'input',
+                    name: 'github',
+                    message: "Please provide engineer's github username",
+                    
+                },
+                // Store Engineer data into teamArray
+            ]).then( templateData => {
+                const newEngineer = new Engineer(templateData.name, templateData.id, templateData.email, templateData.github);
+                this.teamArray.push(newEngineer);
+                // Sends user back to menu
+                this.questions();
+            });
 
 
 
