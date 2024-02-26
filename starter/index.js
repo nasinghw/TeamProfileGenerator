@@ -24,12 +24,39 @@ const render = require("./src/page-template.js");
 
 //USer questions
 
+class Prompt {
+    constructor(){
+        this.teamArray = [];
+    }
+
+    getTeamArray(){
+        return this.teamArray
+    }
+
 questions() {
     inquirer.prompt({
         type: 'list',
         name: 'employeeTitle',
         question: "Select employee title from list to add",
         selection: ['Manager',  'Engineer', 'Intern', 'I have selected my team'] 
+
+    }).then(({employeeTitle}) => {
+        if (employeeType === 'Manager') {
+            inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'name',
+                    message: "Please provide manager's name",
+                    validate: function (nameInput) {
+                        if (nameInput) {
+                            return true;
+                        } else {
+                            console.log("Please provide manager's name!");
+                            return false;
+                        }
+                    }
+                },
+                
     })
-}
+}}
 
