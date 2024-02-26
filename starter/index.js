@@ -63,11 +63,12 @@ questions() {
                     
                 },
                 {
-                    type: 'input',
-                    name: 'github',
-                    message: "Please provide engineer's github username",
+                    type: 'number',
+                    name: 'officeNumber',
+                    message: "Please enter the manager's office number",
                     
                 },
+                
                 // Store Engineer data into teamArray
             ]).then( templateData => {
                 const newEngineer = new Engineer(templateData.name, templateData.id, templateData.email, templateData.github);
@@ -110,7 +111,7 @@ questions() {
                 this.questions();
             });
 
-            } else if (employeeType === 'I finished entering my team info') {
+            } else if (employeeTitle === 'I finished entering my team info') {
             //function that writes the html file in the dist folder
                 const pagehtml = generateHTML(this.getTeamArray());
                 fs.writeFile('./dist/index.html', pagehtml, err => {
