@@ -151,7 +151,7 @@ class Prompt{
             fs.writeFile('./output/team.html', pagehtml, err => {
                 if (err) throw new Error(err);
 
-                console.log('Page created! Check out index.html in the dist/ folder to see it!');
+                console.log('HTML created! Check out team.html in the output/ folder');
             });
         }
     });
